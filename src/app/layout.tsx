@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "David · Datáfonos Dojo y pagos con tarjeta",
+  description:
+    "Tu asesor personal de datáfonos Dojo: transferencias al día siguiente, tarifas personalizadas y atención directa. Pide tu oferta.",
 };
 
 export default function RootLayout({
@@ -24,8 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="es"
+      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
