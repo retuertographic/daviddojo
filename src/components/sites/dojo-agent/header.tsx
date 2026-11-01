@@ -9,6 +9,7 @@ import { DojoLogo } from "./logo";
 const products = [
   { href: "/productos/dojo-duo/", label: "Dojo Duo" },
   { href: "/productos/dojo-go/", label: "Dojo Go" },
+  { href: "/productos/dojo-pocket/", label: "Dojo Pocket" },
 ];
 
 const links = [
