@@ -102,7 +102,7 @@ export function SiteFooter() {
             <p className="text-xl font-medium">Enlaces directos</p>
             <ul className="mt-5 space-y-4 text-lg text-[#1a1210]/70 underline underline-offset-4">
               <li>
-                <Link href="/#datafono">Datáfono Dojo Go</Link>
+                <Link href="/productos/dojo-go/">Dojo Go</Link>
               </li>
               <li>
                 <Link href="/productos/dojo-duo/">Dojo Duo</Link>
