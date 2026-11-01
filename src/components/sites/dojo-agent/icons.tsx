@@ -99,3 +99,12 @@ export function CirclesIcon() {
     </svg>
   );
 }
+
+export function PhoneIcon() {
+  return (
+    <svg viewBox="0 0 36 64" className="h-14 w-auto" aria-hidden>
+      <rect width="36" height="64" rx="3" fill={CORAL} />
+      <rect x="10" y="4" width="16" height="3" rx="1.5" fill={PLUM} />
+    </svg>
+  );
+}
