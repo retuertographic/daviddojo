@@ -76,3 +76,26 @@ export function SwapIcon() {
     </svg>
   );
 }
+
+export function WalletIcon() {
+  return (
+    <svg viewBox="0 0 66 58" className="h-14 w-auto" aria-hidden>
+      <path d="M8 14L56 0l3 12H8Z" fill={PLUM} />
+      <rect y="12" width="66" height="46" rx="3" fill={CORAL} />
+      <circle cx="52" cy="35" r="3.5" fill={PLUM} />
+    </svg>
+  );
+}
+
+export function CirclesIcon() {
+  return (
+    <svg viewBox="0 0 66 66" className="h-14 w-auto" aria-hidden>
+      <circle cx="24" cy="24" r="24" fill={CORAL} />
+      <circle cx="42" cy="42" r="24" fill={CORAL} />
+      <clipPath id="circles-lens">
+        <circle cx="24" cy="24" r="24" />
+      </clipPath>
+      <circle cx="42" cy="42" r="24" fill={PLUM} clipPath="url(#circles-lens)" />
+    </svg>
+  );
+}
