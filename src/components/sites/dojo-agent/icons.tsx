@@ -108,3 +108,24 @@ export function PhoneIcon() {
     </svg>
   );
 }
+
+export function PeopleIcon() {
+  return (
+    <svg viewBox="0 0 66 66" className="h-14 w-auto" aria-hidden>
+      <circle cx="13" cy="8" r="8" fill={CORAL} />
+      <circle cx="53" cy="8" r="8" fill={CORAL} />
+      <path d="M0 22h24l-4 44H4Z M42 22h24l-4 44H46Z" fill={CORAL} />
+      <circle cx="33" cy="8" r="8" fill={PLUM} />
+      <path d="M20 22h26l-4 44H24Z" fill={PLUM} />
+    </svg>
+  );
+}
+
+export function PinIcon() {
+  return (
+    <svg viewBox="0 0 66 66" className="h-14 w-auto" aria-hidden>
+      <ellipse cx="33" cy="53" rx="33" ry="13" fill={CORAL} />
+      <path d="M33 62L13 32A22 22 0 1 1 53 32Z" fill={PLUM} />
+    </svg>
+  );
+}
