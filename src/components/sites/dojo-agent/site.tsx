@@ -105,6 +105,9 @@ export function SiteFooter() {
                 <Link href="/productos/dojo-go/">Dojo Go</Link>
               </li>
               <li>
+                <Link href="/productos/dojo-pocket/">Dojo Pocket</Link>
+              </li>
+              <li>
                 <Link href="/productos/dojo-duo/">Dojo Duo</Link>
               </li>
               <li>

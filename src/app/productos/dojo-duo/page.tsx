@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
@@ -302,9 +303,9 @@ export default function DojoDuoPage() {
                 Acepta pagos en segundos con el datáfono más ligero de Dojo. Cobra dentro y fuera de tu establecimiento
                 pasando automáticamente a 4G si no hay wifi.
               </p>
-              <a href="#contacto" className={cn(textLink, "mt-10")}>
+              <Link href="/productos/dojo-pocket/" className={cn(textLink, "mt-10")}>
                 Más información <ArrowRight className="size-6" />
-              </a>
+              </Link>
             </article>
             <article className="min-w-0">
               <div className="flex aspect-[3/2] w-full items-center justify-center gap-2 overflow-hidden rounded-[2.5rem] bg-[#e1e1dc] px-2 sm:gap-5 sm:px-4">
