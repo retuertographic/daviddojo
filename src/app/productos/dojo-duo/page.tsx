@@ -19,6 +19,7 @@ import {
 import { agent } from "@/lib/agent";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/sites/dojo-agent/header";
+import { FaqList, type FaqItem } from "@/components/sites/dojo-agent/faq-list";
 import {
   BottomBar,
   ContactSection,
@@ -149,6 +150,33 @@ const paymentLinkSteps: { Icon: LucideIcon; active?: boolean }[] = [
   { Icon: Share, active: true },
   { Icon: MessageCircle },
   { Icon: Mail },
+];
+
+const faqs: FaqItem[] = [
+  {
+    q: "¿Qué es VeriFactu y por qué es obligatorio?",
+    a: "VeriFactu es la nueva normativa española que obliga a registrar todas las transacciones comerciales de forma digital y segura a efectos fiscales. Su cumplimiento es obligatorio para todas las empresas. El objetivo es prevenir el fraude fiscal mediante la creación de un sistema estandarizado y verificable para cada venta. Dojo se asegura de que tu empresa cumpla con la normativa adaptando tu sistema de cobro a VeriFactu.",
+  },
+  {
+    q: "¿Cómo funciona VeriFactu?",
+    a: "Cuando haces una venta con un sistema compatible con VeriFactu, el software genera automáticamente un registro seguro y estandarizado de la transacción. Este registro incluye un identificador único (suele ser un código QR) que se envía automáticamente a la Agencia Tributaria. Con Dojo, este complejo proceso es sencillo y automático: se hace de forma segura en segundo plano, sin que te suponga ningún esfuerzo adicional.",
+  },
+  {
+    q: "¿VeriFactu es un sistema de facturación electrónica?",
+    a: "Aunque se trata de conceptos relacionados, no son exactamente lo mismo. VeriFactu es el sistema de registro y comunicación segura de las transacciones de venta (como las de un TPV o datáfono) a las autoridades fiscales. Consiste en un tipo de registro digital estandarizado para las operaciones de venta diarias. Por su parte, la facturación electrónica abarca un proceso más amplio, que incluye el intercambio de facturas completas y detalladas entre empresas en un formato digital estructurado.",
+  },
+  {
+    q: "¿Qué es un datáfono con impresora?",
+    a: "Un datáfono con impresora es un terminal para aceptar pagos que incorpora una impresora. En lugar de imprimir los recibos de los clientes en otro dispositivo, proporciona una solución integral que gestiona el pago e imprime el recibo desde un único dispositivo portátil. Dojo Duo es un buen ejemplo de datáfono con impresora, moderno e inteligente.",
+  },
+  {
+    q: "¿Puedo utilizar este dispositivo con mi sistema TPV actual?",
+    a: "Sí. Dojo Duo se ha diseñado pensando en la flexibilidad y se integra a la perfección con los principales sistemas de TPV. Lo que quieres es adaptar tu negocio sin tener que cambiarlo todo, así que trabajamos contigo para garantizar que el dispositivo se conecte con fluidez al sistema que ya utilizas.",
+  },
+  {
+    q: "¿Necesito un datáfono con impresora para VeriFactu?",
+    a: "No es necesario disponer de un datáfono con impresora para VeriFactu, ya que la normativa se refiere al software que registra la transacción de forma segura, no al hardware. Sin embargo, un dispositivo como Dojo Duo facilita todo el proceso. Garantiza que tu software cumpla con los requisitos de VeriFactu de la AEAT y, al mismo tiempo, te permite entregar a los clientes un recibo físico impreso al instante, todo desde un mismo dispositivo. Así cumples la normativa y ganas en eficiencia.",
+  },
 ];
 
 const textLink = "inline-flex items-center gap-3 text-lg font-semibold text-[#1f5c4f] hover:underline";
@@ -343,7 +371,7 @@ export default function DojoDuoPage() {
         </a>
       </section>
 
-      {/* FAQs: pendiente de contenido */}
+      <FaqList items={faqs} />
 
       <ContactSection />
       <SiteFooter />
