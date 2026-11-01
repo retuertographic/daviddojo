@@ -42,3 +42,37 @@ export function ChatIcon() {
     </svg>
   );
 }
+
+export function ReceiptIcon() {
+  return (
+    <svg viewBox="0 0 44 56" className="h-14 w-auto" aria-hidden>
+      <path d="M0 2a2 2 0 0 1 2-2h40a2 2 0 0 1 2 2v46l-5.5 8-5.5-8-5.5 8-5.5-8-5.5 8-5.5-8L0 56Z" fill={CORAL} />
+      <rect x="6" y="9" width="32" height="5" rx="2.5" fill={PLUM} />
+      <rect x="6" y="19" width="32" height="5" rx="2.5" fill={PLUM} />
+      <rect x="6" y="29" width="18" height="5" rx="2.5" fill={PLUM} />
+    </svg>
+  );
+}
+
+export function CocktailIcon() {
+  return (
+    <svg viewBox="0 0 58 58" className="h-14 w-auto" aria-hidden>
+      <path d="M0 10h58L29 50Z" fill={CORAL} />
+      <path d="M10 18h38L29 44Z" fill={PLUM} />
+      <path d="M28 40L52 0" stroke={PLUM} strokeWidth="3" />
+      <rect x="14" y="54" width="30" height="3" fill={CORAL} />
+    </svg>
+  );
+}
+
+export function SwapIcon() {
+  return (
+    <svg viewBox="0 0 58 58" className="h-14 w-auto" aria-hidden>
+      <path d="M12 12L46 46" stroke={PLUM} strokeWidth="14" strokeLinecap="round" />
+      <circle cx="10" cy="10" r="10" fill={CORAL} />
+      <circle cx="48" cy="10" r="10" fill={CORAL} />
+      <circle cx="10" cy="48" r="10" fill={CORAL} />
+      <circle cx="48" cy="48" r="10" fill={CORAL} />
+    </svg>
+  );
+}

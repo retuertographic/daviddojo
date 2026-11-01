@@ -1,4 +1,5 @@
 import Image, { type StaticImageData } from "next/image";
+import Link from "next/link";
 import { agent } from "@/lib/agent";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/sites/dojo-agent/header";
@@ -146,12 +147,9 @@ export default function Home() {
               <h2 className={`${heading} text-[2.6rem] leading-[1.1] font-medium sm:text-6xl`}>{s.title}</h2>
               <p className="mt-6 text-xl leading-relaxed text-[#1a1210]/70">{s.text}</p>
               {s.cta && (
-                <a
-                  href="#contacto"
-                  className={cn(outlineBtn, "mt-10")}
-                >
-                  Pedir información
-                </a>
+                <Link href="/productos/dojo-go/" className={cn(outlineBtn, "mt-10")}>
+                  Más información
+                </Link>
               )}
               {s.stat && (
                 <div className="mt-10">
