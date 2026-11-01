@@ -1,24 +1,21 @@
 import Image, { type StaticImageData } from "next/image";
-import { Mail, MessageCircle, Phone } from "lucide-react";
-import { agent, whatsappUrl } from "@/lib/agent";
+import { agent } from "@/lib/agent";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/sites/dojo-agent/header";
-import { DojoLogo } from "@/components/sites/dojo-agent/logo";
 import { CardIcon, ChatIcon, StopwatchIcon, WifiIcon } from "@/components/sites/dojo-agent/icons";
-import { ContactForm } from "@/components/sites/dojo-agent/contact-form";
+import {
+  BottomBar,
+  ContactSection,
+  SiteFooter,
+  heading,
+  outlineBtn,
+  primaryBtn,
+} from "@/components/sites/dojo-agent/site";
 import terminalMesa from "../../public/sites/dojo/terminal-mesa.jpg";
 import datafonoTarjeta from "../../public/sites/dojo/datafono-tarjeta.jpg";
 import camarero from "../../public/sites/dojo/camarero.jpg";
 import comercio from "../../public/sites/dojo/comercio.jpg";
 import restaurante from "../../public/sites/dojo/restaurante.jpg";
-
-const quickWhatsapp = whatsappUrl(
-  `Hola ${agent.name}, tengo un negocio y me interesa hacerme cliente de Dojo. ¿Me preparas una oferta?`,
-);
-
-const heading = "font-[family-name:var(--font-archivo)] tracking-[-0.02em] text-[#1a1210]";
-const primaryBtn =
-  "inline-flex items-center justify-center rounded-full bg-[#003e33] px-10 py-5 text-lg font-semibold text-[#3de8c4] transition-colors hover:bg-[#00594a]";
 
 const features = [
   { Icon: StopwatchIcon, title: "Ahorra tiempo", text: "Conecta el TPV al datáfono." },
@@ -151,7 +148,7 @@ export default function Home() {
               {s.cta && (
                 <a
                   href="#contacto"
-                  className="mt-10 inline-flex rounded-full border-2 border-[#003e33] px-14 py-5 text-lg font-semibold text-[#003e33] transition-colors hover:bg-[#003e33] hover:text-[#3de8c4]"
+                  className={cn(outlineBtn, "mt-10")}
                 >
                   Pedir información
                 </a>
@@ -188,56 +185,7 @@ export default function Home() {
         </a>
       </section>
 
-      {/* Contacto */}
-      <section id="contacto" className="scroll-mt-28 px-4 py-20 sm:px-6 sm:py-28">
-        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.25fr] lg:gap-20">
-          <div>
-            <h2 className={`${heading} text-[2.6rem] leading-[1.1] font-medium sm:text-6xl`}>
-              Hazte cliente con {agent.name}
-            </h2>
-            <p className="mt-6 text-xl leading-relaxed text-[#1a1210]/70">
-              Cuéntame cómo es tu negocio y te preparo una oferta personalizada, normalmente en menos de 24 horas y sin
-              compromiso.
-            </p>
-            <ul className="mt-10 space-y-6 text-lg">
-              <li>
-                <a href={quickWhatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4">
-                  <span className="flex size-12 items-center justify-center rounded-full bg-[#003e33] text-[#3de8c4]">
-                    <MessageCircle className="size-5" />
-                  </span>
-                  <span>
-                    <span className="block text-sm text-[#1a1210]/60">WhatsApp</span>
-                    {agent.phoneDisplay}
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href={`tel:+${agent.phone}`} className="flex items-center gap-4">
-                  <span className="flex size-12 items-center justify-center rounded-full bg-[#003e33] text-[#3de8c4]">
-                    <Phone className="size-5" />
-                  </span>
-                  <span>
-                    <span className="block text-sm text-[#1a1210]/60">Teléfono · {agent.hours}</span>
-                    {agent.phoneDisplay}
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${agent.email}`} className="flex items-center gap-4">
-                  <span className="flex size-12 items-center justify-center rounded-full bg-[#003e33] text-[#3de8c4]">
-                    <Mail className="size-5" />
-                  </span>
-                  <span>
-                    <span className="block text-sm text-[#1a1210]/60">Email</span>
-                    {agent.email}
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <ContactForm />
-        </div>
-      </section>
+      <ContactSection />
 
       {/* Notas */}
       <section className="bg-white px-4 py-16 text-center sm:px-6">
@@ -254,60 +202,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="px-4 pt-20 pb-36 sm:px-6 lg:pb-20">
-        <div className="mx-auto max-w-6xl">
-          <DojoLogo className="h-12 sm:h-14" />
-          <p className="mt-4 text-lg">
-            Página de {agent.fullName}, {agent.role.charAt(0).toLowerCase() + agent.role.slice(1)}
-          </p>
-          <div className="mt-12 grid grid-cols-2 gap-8 sm:max-w-xl">
-            <div>
-              <p className="text-xl font-medium">Contacta con {agent.name}</p>
-              <ul className="mt-5 space-y-4 text-lg text-[#1a1210]/70 underline underline-offset-4">
-                <li>
-                  <a href={quickWhatsapp} target="_blank" rel="noopener noreferrer">
-                    WhatsApp
-                  </a>
-                </li>
-                <li>
-                  <a href={`tel:+${agent.phone}`}>Teléfono</a>
-                </li>
-                <li>
-                  <a href={`mailto:${agent.email}`}>Email</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="text-xl font-medium">Enlaces directos</p>
-              <ul className="mt-5 space-y-4 text-lg text-[#1a1210]/70 underline underline-offset-4">
-                <li>
-                  <a href="#datafono">Datáfono Dojo Go</a>
-                </li>
-                <li>
-                  <a href="#ventajas">Ventajas</a>
-                </li>
-                <li>
-                  <a href="#contacto">Hazte cliente</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <hr className="mt-16 border-[#1a1210]/30" />
-          <p className="mt-10 max-w-4xl text-lg leading-relaxed text-[#1a1210]/70">
-            Esta es la página personal de un asesor comercial de Dojo. Dojo es el nombre comercial de Paymentsense
-            Ireland Limited, entidad regulada por el Banco Central de Irlanda e inscrita en el Banco de España con el
-            número 6728. Las condiciones definitivas se recogen en la oferta personalizada y en el contrato.
-          </p>
-        </div>
-      </footer>
-
-      {/* Barra inferior fija (móvil) */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-[#1a1210]/10 bg-white px-4 py-4 lg:hidden">
-        <a href="#contacto" className={cn(primaryBtn, "w-full py-4")}>
-          Empieza ahora
-        </a>
-      </div>
+      <SiteFooter />
+      <BottomBar />
     </div>
   );
 }

@@ -29,7 +29,7 @@ export default function RootLayout({
       lang="es"
       className={`${archivo.variable} ${figtree.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#f0f0eb] font-[family-name:var(--font-figtree)]">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#f0f1eb] font-[family-name:var(--font-figtree)]">{children}</body>
     </html>
   );
 }
