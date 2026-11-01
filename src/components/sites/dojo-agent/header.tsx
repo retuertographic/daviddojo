@@ -12,6 +12,7 @@ const products = [
   { href: "/productos/dojo-pocket/", label: "Dojo Pocket" },
   { href: "/datafonos/", label: "Datáfonos" },
   { href: "/app/", label: "App Dojo for business" },
+  { href: "/bookings/", label: "Dojo Bookings" },
 ];
 
 const links = [

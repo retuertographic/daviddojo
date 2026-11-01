@@ -114,6 +114,9 @@ export function SiteFooter() {
                 <Link href="/app/">App Dojo for business</Link>
               </li>
               <li>
+                <Link href="/bookings/">Dojo Bookings</Link>
+              </li>
+              <li>
                 <Link href="/productos/dojo-duo/">Dojo Duo</Link>
               </li>
               <li>
