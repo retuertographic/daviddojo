@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - claude/stoic-franklin-9gvt1c
+      - claude/magical-mccarthy-z1z4my
   workflow_dispatch:
 
 permissions:
