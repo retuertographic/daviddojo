@@ -23,7 +23,7 @@ const volumes = [
 ];
 
 const fieldClass =
-  "w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-zinc-900 placeholder:text-zinc-400 outline-none transition focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10";
+  "w-full rounded-2xl border border-[#1a1210]/15 bg-white px-4 py-3.5 text-[#1a1210] placeholder:text-[#1a1210]/40 outline-none transition focus:border-[#003e33] focus:ring-4 focus:ring-[#003e33]/10";
 
 export function ContactForm() {
   const [channel, setChannel] = useState<"whatsapp" | "email">("whatsapp");
@@ -53,20 +53,20 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-4 rounded-3xl bg-white p-6 shadow-xl ring-1 ring-zinc-200 sm:grid-cols-2 sm:p-8">
-      <label className="grid gap-1.5 text-sm font-medium text-zinc-700">
+    <form onSubmit={onSubmit} className="grid gap-4 rounded-[2rem] bg-white p-6 sm:grid-cols-2 sm:p-10">
+      <label className="grid gap-1.5 text-sm font-medium text-[#1a1210]">
         Nombre
         <input name="name" required autoComplete="name" placeholder="Tu nombre" className={fieldClass} />
       </label>
-      <label className="grid gap-1.5 text-sm font-medium text-zinc-700">
+      <label className="grid gap-1.5 text-sm font-medium text-[#1a1210]">
         Teléfono
         <input name="phone" required type="tel" autoComplete="tel" placeholder="600 000 000" className={fieldClass} />
       </label>
-      <label className="grid gap-1.5 text-sm font-medium text-zinc-700 sm:col-span-2">
+      <label className="grid gap-1.5 text-sm font-medium text-[#1a1210] sm:col-span-2">
         Nombre del negocio
         <input name="business" required autoComplete="organization" placeholder="Ej. Cafetería La Plaza" className={fieldClass} />
       </label>
-      <label className="grid gap-1.5 text-sm font-medium text-zinc-700">
+      <label className="grid gap-1.5 text-sm font-medium text-[#1a1210]">
         Sector
         <select name="sector" required defaultValue="" className={fieldClass}>
           <option value="" disabled>
@@ -77,7 +77,7 @@ export function ContactForm() {
           ))}
         </select>
       </label>
-      <label className="grid gap-1.5 text-sm font-medium text-zinc-700">
+      <label className="grid gap-1.5 text-sm font-medium text-[#1a1210]">
         Ventas con tarjeta
         <select name="volume" required defaultValue="" className={fieldClass}>
           <option value="" disabled>
@@ -88,13 +88,13 @@ export function ContactForm() {
           ))}
         </select>
       </label>
-      <label className="grid gap-1.5 text-sm font-medium text-zinc-700 sm:col-span-2">
-        ¿Algo más que deba saber? <span className="font-normal text-zinc-400">(opcional)</span>
+      <label className="grid gap-1.5 text-sm font-medium text-[#1a1210] sm:col-span-2">
+        ¿Algo más que deba saber? <span className="font-normal text-[#1a1210]/50">(opcional)</span>
         <textarea name="message" rows={3} placeholder="Proveedor actual, nº de datáfonos, horario para llamarte…" className={fieldClass} />
       </label>
 
       <fieldset className="sm:col-span-2">
-        <legend className="mb-2 text-sm font-medium text-zinc-700">¿Cómo prefieres enviármelo?</legend>
+        <legend className="mb-2 text-sm font-medium text-[#1a1210]">¿Cómo prefieres enviármelo?</legend>
         <div className="grid grid-cols-2 gap-3">
           {(
             [
@@ -107,10 +107,10 @@ export function ContactForm() {
               type="button"
               aria-pressed={channel === id}
               onClick={() => setChannel(id)}
-              className={`flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-medium transition ${
+              className={`flex items-center justify-center gap-2 rounded-full border px-4 py-3 text-sm font-semibold transition ${
                 channel === id
-                  ? "border-blue-600 bg-blue-50 text-blue-700"
-                  : "border-zinc-200 text-zinc-600 hover:border-zinc-300"
+                  ? "border-[#003e33] bg-[#003e33] text-[#3de8c4]"
+                  : "border-[#1a1210]/20 text-[#1a1210] hover:border-[#1a1210]/40"
               }`}
             >
               <Icon className="size-4" />
@@ -122,11 +122,11 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="rounded-full bg-blue-600 px-6 py-4 font-medium text-white transition-colors hover:bg-blue-500 sm:col-span-2"
+        className="rounded-full bg-[#003e33] px-6 py-4 text-lg font-semibold text-[#3de8c4] transition-colors hover:bg-[#00594a] sm:col-span-2"
       >
-        Quiero mi oferta personalizada
+        Hazte cliente
       </button>
-      <p className="text-center text-xs text-zinc-500 sm:col-span-2">
+      <p className="text-center text-xs text-[#1a1210]/60 sm:col-span-2">
         Tus datos llegan solo a {agent.name}, tu asesor, y se usan únicamente para preparar tu oferta.
       </p>
     </form>

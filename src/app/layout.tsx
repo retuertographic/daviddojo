@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo, Figtree } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  axes: ["wdth"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const figtree = Figtree({
+  variable: "--font-figtree",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "David · Datáfonos Dojo y pagos con tarjeta",
+  title: "Dojo con David · Datáfonos y pagos con tarjeta",
   description:
-    "Tu asesor personal de datáfonos Dojo: transferencias al día siguiente, tarifas personalizadas y atención directa. Pide tu oferta.",
+    "Hazte cliente de Dojo con David, tu asesor comercial: datáfonos rápidos, transferencias al día siguiente y atención personal.",
 };
 
 export default function RootLayout({
@@ -26,9 +27,9 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
+      className={`${archivo.variable} ${figtree.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#f0f0eb] font-[family-name:var(--font-figtree)]">{children}</body>
     </html>
   );
 }
